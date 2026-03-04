@@ -4,11 +4,18 @@ using System;
 
 Product[] prd = new Product[]
 {
-      new Electronic{},
-      new Clothing{ },
-      new Food{ }
+      new Electronic{Name = "노트북", Price = 1500000, Warranty = 24},
+      new Clothing{Name = "청바지", Price = 89000, Size = "M"},
+      new Food{Name = "우유", Price = 3500, ExpirationDate = new DateTime (2026, 4, 4)}
 
 };
+
+foreach(Product p in prd)//배열에서 하나씩 꺼내서 출력
+{
+    Console.WriteLine(p.ToString());//Tostring으로 p의 정보를 출력
+    p.GetDescription();//각 제품의 설명을 출력
+    Console.WriteLine();
+}
 class Product
 {
     public string Name;
@@ -16,7 +23,7 @@ class Product
 
     public override string ToString()
     {
-        return $"[{Name}] - ₩[{Price}:N0]";
+        return $"{Name} - ₩{Price:N0}";
     }
 
     public virtual void GetDescription()
@@ -31,7 +38,7 @@ class Electronic : Product
 
     public override string ToString()
     {
-        return $"[{Name}] - ₩[{Price}:N0] (보증: [{Warranty}]개월)";
+        return $"{Name} - ₩{Price:N0} (보증: [{Warranty}]개월)";
     }
     public override void GetDescription()
     {
@@ -40,11 +47,11 @@ class Electronic : Product
 }
 class Clothing : Product
 {
-    public int Size;
+    public string Size;
 
     public override string ToString()
     {
-        return $"[{Name}] - ₩[{Price}:N0] (사이즈: {Size}) ";
+        return $"{Name} - ₩{Price:N0}:N0 (사이즈: {Size}) ";
     }
     public override void GetDescription()
     {
@@ -53,11 +60,11 @@ class Clothing : Product
 }
 class Food : Product
 {
-    public int ExpirationDate;
+    public DateTime ExpirationDate;
 
     public override string ToString()
     {
-        return $"[{Name}] - ₩[{Price}:N0]  (유통기한: [{ExpirationDate}])";
+        return $"{Name} - ₩[{Price:N0}  (유통기한: {ExpirationDate:yyyy-MM-dd})";
     }
     public override void GetDescription()
     {

@@ -17,8 +17,8 @@ foreach(Vehicle v in vehi)
 }
 class Vehicle
 {
-    public string Name { get; private set; }
-    public int Speed { get; private set; }
+    public string Name { get; protected set; }
+    public int Speed { get; protected set; }
 
     public virtual void Move()
     {
@@ -29,42 +29,45 @@ class Vehicle
 
 class Car : Vehicle
 {
-    public int Speed { get; private set; } = 120;
+    public int Speed { get; protected set; } = 120;
 
     public Car(string name)
     {
+        Name = name;
         
     }
 
     public override void Move()
     {
-        Console.WriteLine($"[{Name}]이(가) 도로를 달립니다! 속도: [{Speed}]km/h");
+        Console.WriteLine($"{Name}이(가) 도로를 달립니다! 속도: {Speed}km/h");
     }
 }
 class AirPlane : Vehicle
 {
-    public int Speed { get; private set; } = 900;
+    public int Speed { get; protected set; } = 900;
     public AirPlane(string name)
     {
+            Name = name;
 
     }
     public override void Move()
     {
-        Console.WriteLine($"[{Name}]이(가) 하늘을 납니다! 속도: [{Speed}]km/h");
+        Console.WriteLine($"{Name}이(가) 하늘을 납니다! 속도: {Speed}]m/h");
     }
 }
 class Boat : Vehicle
 {
-    public int Speed { get; private set; } = 60;
+    public int Speed { get; protected set; } = 60;
 
     public Boat(string name)
     {
+        Name = name;
 
     }
 
     public override void Move()
     {
-        Console.WriteLine($"[{Name}]이(가) 바다를 항해합니다! 속도: [{Speed}]km/h");
+        Console.WriteLine($"{Name}이(가) 바다를 항해합니다! 속도: {Speed}km/h");
     }
 }
 

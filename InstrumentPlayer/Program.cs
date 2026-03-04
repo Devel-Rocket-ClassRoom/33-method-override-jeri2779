@@ -4,6 +4,19 @@ using System;
 
 Console.WriteLine("=== 악기 연주회 ===");
 
+Instrument[] instruments = new Instrument[]
+{
+    new Piano("피아노"),
+    new Guitar("기타"),
+    new Drum("드럼")
+};
+foreach (var instrument in instruments)
+{
+    instrument.Tune();
+    instrument.Play();
+    Console.WriteLine();
+}
+
 
 class Instrument
 {
@@ -25,7 +38,7 @@ class Instrument
 
 class Piano : Instrument
 {
-    public Piano(string name) : base("피아노") { }
+    public Piano(string name) : base(name) { }
 
     public override void Play()
     {
@@ -41,7 +54,7 @@ class Piano : Instrument
 
 class Guitar : Instrument
 {
-    public Guitar(string name) : base("기타")
+    public Guitar(string name) : base(name)
     {
     }
 
@@ -58,7 +71,7 @@ class Guitar : Instrument
 
 class Drum : Instrument
 {
-    public Drum(string name) : base("드럼")
+    public Drum(string name) : base(name)
     {
     }
 
@@ -67,7 +80,6 @@ class Drum : Instrument
         Console.WriteLine("🥁 드럼을 두드립니다 - 둥둥둥~");
     }
 
-    public override void Tune()
-    { 
-    }
+   
 }
+ 
