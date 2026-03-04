@@ -4,12 +4,13 @@
 
 **요구사항**
 
-- `Product` 클래스를 만들고, `Name`(이름), `Price`(가격) 속성을 가짐
-- `Product` 클래스의 `ToString()`을 오버라이드하여 "[이름] - ₩[가격:N0]" 형식으로 반환함
-- `Product` 클래스에 `virtual` 메서드 `GetDescription()`을 만들고, 기본 설명을 반환함
-- `Electronics` 클래스는 `Product`를 상속받고, `Warranty`(보증기간, 개월) 속성을 추가함
-  - `ToString()`을 오버라이드하여 부모의 `ToString()` + " (보증: [기간]개월)" 형식으로 반환함
-  - `GetDescription()`을 오버라이드하여 전자제품 전용 설명을 반환함
+- o`Product` 클래스를 만들고, `Name`(이름), `Price`(가격) 속성을 가짐
+- o`Product` 클래스의 `ToString()`을 오버라이드하여 "[이름] - ₩[가격:N0]" 형식으로 반환함
+- o`Product` 클래스에 `virtual` 메서드 `GetDescription()`을 만들고, 기본 설명을 반환함
+- o`Electronics` 클래스는 `Product`를 상속받고, 
+- `Warranty`(보증기간, 개월) 속성을 추가함
+  o- `ToString()`을 오버라이드하여 부모의 `ToString()` + " (보증: [기간]개월)" 형식으로 반환함
+  o- `GetDescription()`을 오버라이드하여 전자제품 전용 설명을 반환함
 - `Clothing` 클래스는 `Product`를 상속받고, `Size`(사이즈) 속성을 추가함
   - `ToString()`을 오버라이드하여 부모의 `ToString()` + " (사이즈: [사이즈])" 형식으로 반환함
   - `GetDescription()`을 오버라이드하여 의류 전용 설명을 반환함
